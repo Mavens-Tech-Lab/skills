@@ -13,7 +13,7 @@ Discovers every entity worth marking up · verifies against *live* schema.org + 
 
 <br />
 
-[![Skill page](https://img.shields.io/badge/skill_page-mavenslab.tech-121619?style=for-the-badge&logo=googlechrome&logoColor=FCFF56)](https://mavenslab.tech/skills/json-ld) [![Tested on](https://img.shields.io/badge/tested_on-Claude_Code-121619?style=for-the-badge&logo=claude&logoColor=FCFF56)](https://code.claude.com/docs/en/skills) [![Version](https://img.shields.io/badge/version-1.0.0-FCFF56?style=for-the-badge&labelColor=121619)](../.claude-plugin/marketplace.json) [![License](https://img.shields.io/badge/license-MIT-FCFF56?style=for-the-badge&labelColor=121619)](../LICENSE)
+[![Skill page](https://img.shields.io/badge/skill_page-mavenslab.tech-121619?style=for-the-badge&logo=googlechrome&logoColor=FCFF56)](https://mavenslab.tech/skills/json-ld) [![Tested on](https://img.shields.io/badge/tested_on-Claude_Code-121619?style=for-the-badge&logo=claude&logoColor=FCFF56)](https://code.claude.com/docs/en/skills) [![Version](https://img.shields.io/badge/version-1.1.0-FCFF56?style=for-the-badge&labelColor=121619)](../.claude-plugin/marketplace.json) [![License](https://img.shields.io/badge/license-MIT-FCFF56?style=for-the-badge&labelColor=121619)](../LICENSE)
 
 </div>
 
@@ -59,7 +59,7 @@ Structured data is where LLM-generated code fails quietly:
 | **2 · Fetch** | Pulls the **live** schema.org type definitions and Google's **current** rich-results requirements. Hard rule: a property that wasn't verified this run doesn't get emitted. No network → it stops and says so. |
 | **3 · Map** | Traces every property to a real source — DB column, CMS field, frontmatter key — with named transforms and per-property empty-handling. No source → omitted and reported, never invented. |
 | **4 · Ask** | One round of questions for what code can't know: ambiguous types (Product vs Service — with consequences), org identity, `sameAs` profiles, data-exposure choices. |
-| **5 · Implement** | One shared builder module, framework-idiomatic injection (Next/Astro/Nuxt/SvelteKit/SSGs/Django/Rails/WordPress-plugin-aware), stable `@id`s, one connected `@graph` per page, `<`-escaped serialization. Fixes and deepens existing markup instead of duplicating it. |
+| **5 · Implement** | One shared builder module, framework-idiomatic injection (Next/Astro/Nuxt/SvelteKit/SSGs/Django/Rails/WordPress-plugin-aware), stable `@id`s, one connected `@graph` per page, `\u003c`-escaped serialization. Fixes and deepens existing markup instead of duplicating it. |
 | **6 · Verify** | Re-parses the JSON-LD from **rendered HTML** (what crawlers actually get), checks Google-required coverage, runs live validators when browser tooling exists — and reports the gaps as actions: *"add `updatedAt` → unlocks `dateModified`"*. |
 
 <br />
@@ -107,7 +107,7 @@ In any other agent, name the skill in your prompt:
 - *"Audit what structured data this site has"*
 - *"Make our articles eligible for rich results"*
 
-Works with **Next.js** (App/Pages router), **Astro**, **Nuxt**, **SvelteKit**, static-site generators (**Hugo**, **Jekyll**, **Eleventy**), server-template stacks (**Django**, **Rails**, **Laravel**), and **WordPress** (extends Yoast/RankMath graphs through their filters instead of fighting them).
+Works with **Next.js** (App/Pages router), **Astro**, **Nuxt**, **SvelteKit**, static-site generators (**Hugo**, **Jekyll**, **Eleventy**), server-template stacks (**Django**, **Rails**, **Laravel**), **WordPress** (extends Yoast/Rank Math/WooCommerce graphs through their filters instead of fighting them), and **Shopify Liquid themes** — any theme, not just the reference ones: it greps the actual theme for emitters, audits the rendered storefront for SEO-app markup, uses the native `structured_data` filter where it fits, hand-builds the rest per property with `| json`, handles cents→price conversion, and queries the **Shopify Dev MCP** (`@shopify/dev-mcp`) for Liquid data structures — recommending its install when missing.
 
 <br />
 
@@ -122,7 +122,7 @@ json-ld/
 │   ├── entity-discovery.md           # data-model / route / existing-markup sweep → entity inventory
 │   ├── fresh-definitions.md          # live schema.org + Google fetch procedure + traceability rule
 │   ├── data-mapping.md               # property maps, @id scheme, page graphs, the gap list
-│   ├── implementation-patterns.md    # builder-module architecture + per-framework injection, XSS-safe
+│   ├── implementation-patterns.md    # builder module + per-framework injection + WordPress/Shopify playbooks
 │   └── validation.md                 # static checks → rendered-HTML re-parse → live validators → report
 └── scripts/
     └── extract-jsonld.mjs            # zero-dep: extract & parse JSON-LD blocks from rendered HTML

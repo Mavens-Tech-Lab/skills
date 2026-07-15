@@ -25,7 +25,8 @@ An entity worth marking up almost always has a code-level definition. Look in AL
 | Plain SQL | migration folders, `.sql` dumps |
 | GraphQL | SDL files, codegen output |
 | Headless CMS | Sanity `schemaTypes`, Contentful content-type exports/migrations, Strapi `src/api/*/content-types`, Payload collections, Directus snapshots |
-| WordPress | registered custom post types + ACF field groups |
+| WordPress | registered custom post types + ACF field groups; WooCommerce product data (attributes, variations) when present |
+| Shopify theme | entities are platform-defined (`product`, `collection`, `article`, `blog`, `page`, `shop`) — the "model" to inventory is which `templates/*.json` (or legacy `.liquid` templates) wire which sections, plus `config/settings_schema.json` for org identity (logo, `social_*_link` settings → `sameAs`) and metafield usage (`grep -r metafields`) for extended fields |
 | File-based content | Astro/Nuxt content collections config, Contentlayer, markdown frontmatter fields (sample several real files — frontmatter is the schema) |
 | Config-as-data | JSON/YAML data files (`src/data/*`), hardcoded arrays that render lists (team members, testimonials, FAQs, pricing tiers) |
 
@@ -48,6 +49,7 @@ Grep the codebase AND (if a build exists or a dev server can run) the rendered H
 - JSON-LD: `application/ld+json` — collect every emitting site: hand-rolled script tags, SEO-lib components, plugin output.
 - Microdata: `itemscope`, `itemtype`, `itemprop`. RDFa: `vocab=`, `typeof=`, `property=`.
 - For each existing block: which type, is it valid, is the data correct *right now* (stale org names and dead social links are common), is it duplicated by another emitter on the same page.
+- **WordPress & Shopify: the rendered-HTML audit is mandatory, not optional** — the dominant emitters live outside the repo. WordPress: SEO plugins (Yoast/Rank Math/AIOSEO) and WooCommerce emit graphs at runtime. Shopify: themes ship their own markup (reference themes emit Organization/WebSite from header sections and product/article via the native `structured_data` Liquid filter — but every theme differs, so grep `layout/`, `sections/`, `snippets/` rather than assuming paths), and installed **SEO apps** inject additional markup that appears only in the storefront HTML. Fetch a live/preview URL per page type and inventory every emitter before proposing any addition. On Shopify, also check whether the Shopify Dev MCP (`@shopify/dev-mcp`) is connected — the implementation playbook relies on it for Liquid data structures; if missing, note "recommend installing Shopify Dev MCP" as a scan finding.
 - Meta layer as data hints: OG tags, twitter cards, canonical tags — these reveal which fields the site already treats as its public description.
 
 Classify each finding: `valid & complete` / `valid but shallow` (bare name+type, no graph, missing recommended props) / `invalid` (parse errors, wrong property names, wrong value types) / `wrong format` (microdata/RDFa candidate for conversion) / `conflicting` (two nodes disagree about the same entity).

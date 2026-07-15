@@ -15,6 +15,7 @@ Every type and property this skill emits must be verified against a definition *
 | Is this type eligible for a Google rich result **today**? | `https://developers.google.com/search/docs/appearance/structured-data/search-gallery` — the live list, nothing else |
 | Google's required/recommended properties + content policies for an eligible type | `https://developers.google.com/search/docs/appearance/structured-data/<feature>` (linked from the gallery) |
 | JSON-LD syntax semantics: `@graph`, `@id`, `@context`, nesting vs referencing | JSON-LD 1.1 spec via `https://json-ld.org` → `https://www.w3.org/TR/json-ld11/` |
+| Platform data structures (Shopify: Liquid object fields, filter behavior, theme best practices) | **Shopify Dev MCP** (`@shopify/dev-mcp`) when connected — query it instead of memory, same rule as the vocabulary; fallback `https://shopify.dev/docs/api/liquid`. WordPress plugin APIs: the plugin's current developer docs |
 
 Use WebFetch (or the environment's equivalent). **If no network access is available: stop and tell the user.** Offer the choice to proceed from memory only as an explicit opt-in, and if taken, stamp every output file and the final report with "generated from unverified (possibly stale) definitions — re-validate online".
 
