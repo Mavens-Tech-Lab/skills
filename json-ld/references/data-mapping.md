@@ -45,6 +45,10 @@ Per page, emit **one** `<script type="application/ld+json">` containing `{"@cont
 
 `Organization` node depth (the difference between a knowledge-panel candidate and a name tag): `name`, `legalName` (if different), `url`, `logo` (`ImageObject` with dimensions), `sameAs` (every real official profile — from intake, never guessed), `description`, and contact/address/founding fields only when real. `WebSite` gets `SearchAction`/`potentialAction` **only if the site actually has internal search**.
 
+## Referencing off-page entities
+
+For pointers to things that live elsewhere (`subjectOf`, `citation`, `isBasedOn`, `mentions` — a LinkedIn post about the product, a press article, a talk recording): use the **most generic accurate type** — `CreativeWork`, `WebPage`, or `Thing` — with `url` and `name`. Never type a bare reference as a rich-result-candidate type (`SocialMediaPosting`, `DiscussionForumPosting`, `Review`, `Product`, `JobPosting`, `FAQPage`, `VideoObject`, …): Google evaluates candidate types **wherever they appear in the graph**, including nested reference values, and a reference lacking that feature's required fields is reported as an *invalid item on your page* (a url-only `SocialMediaPosting` in `subjectOf` gets judged — and failed — as a Discussion Forum item). Reserve feature-candidate types for entities genuinely on the page with their required data wired.
+
 ## Listing pages and multi-entity pages
 
 - Listing/category pages: `ItemList` whose `itemListElement` are `ListItem`s with `position` + `url` pointing at the detail pages — do **not** duplicate each item's full markup on the list page (check the fetched Google carousel doc for when summary-page vs all-in-one applies).

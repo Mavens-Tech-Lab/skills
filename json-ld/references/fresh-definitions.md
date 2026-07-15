@@ -48,3 +48,5 @@ Append to `jsonld-scan.md`, one block per type:
 ```
 
 **Traceability rule (enforced in Phase 6):** if a property isn't recorded in this section — in a full block, a parent's value-type notes, or the Supporting types block — it doesn't get emitted. When an implementation agent wants an extra property mid-flight, it fetches, records here, then emits — in that order.
+
+**The rule covers kept markup too.** Fetch definitions for every type that stays in the final graph, including existing nodes whose action is `keep`: each of their current properties must appear in the fetched definition, or the row's action flips to `fix`. Pre-existing markup is not grandfathered — undefined properties on valid-looking nodes are precisely what code review misses and validators flag.

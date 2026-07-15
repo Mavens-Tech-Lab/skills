@@ -25,7 +25,7 @@
       "source": "./",
       "skills": ["./json-ld"],
       "description": "Implement, fix, and deepen schema.org structured data as JSON-LD — including WordPress (Yoast/Rank Math/WooCommerce-aware) and Shopify Liquid themes. Discovers every entity worth marking up by scanning data models and routes, verifies every type and property against the live schema.org release and Google rich-results docs (never model memory), wires each value to the page's real data flow, and validates against the rendered HTML.",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "author": { "name": "Mavens Tech Lab" },
       "homepage": "https://mavenslab.tech/skills/json-ld",
       "repository": "https://github.com/Mavens-Tech-Lab/skills",
