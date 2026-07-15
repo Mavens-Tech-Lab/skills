@@ -1,0 +1,24 @@
+{
+  "name": "mavens-skills",
+  "description": "Open-source Claude Agent Skills by Mavens Tech Lab",
+  "owner": {
+    "name": "Mavens Tech Lab",
+    "email": "mavenstechlab@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "compliance-pages",
+      "source": "./",
+      "skills": ["./compliance-pages"],
+      "description": "Generate the legal/compliance pages every website needs — Privacy Policy, Terms of Use, Support, Contact — plus a compliant cookie consent banner, and conditionally an accessibility statement and refund/shipping policies. Grounded in an actual scan of the codebase and right-sized to what the site really does.",
+      "version": "1.0.0",
+      "author": { "name": "Mavens Tech Lab" },
+      "homepage": "https://mavenslab.tech/skills/compliance-pages",
+      "repository": "https://github.com/Mavens-Tech-Lab/skills",
+      "license": "MIT",
+      "keywords": ["privacy-policy", "terms-of-use", "cookie-consent", "gdpr", "ccpa", "compliance", "legal-pages", "launch"],
+      "category": "compliance",
+      "strict": false
+    }
+  ]
+}

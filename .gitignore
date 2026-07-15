@@ -1,0 +1,11 @@
+# Internal Claude context — do not publish (public repo)
+CLAUDE.local.md
+.claude/
+
+# macOS
+.DS_Store
+
+# Editor / OS junk
+*.swp
+.idea/
+.vscode/
