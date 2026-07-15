@@ -24,6 +24,7 @@
 | Skill | What it does |
 | :-- | :-- |
 | **[compliance-pages](./compliance-pages/)** | Generates Privacy Policy, Terms of Use, Support, and Contact pages plus a compliant cookie consent banner (and, when warranted, accessibility and refund/shipping policies) — grounded in a real scan of your codebase and right-sized to what your site actually does. |
+| **[json-ld](./json-ld/)** | Implements, fixes, and deepens schema.org structured data as JSON-LD — discovers every entity worth marking up from your data models and routes, verifies every property against the **live** schema.org release and Google rich-results docs (never model memory), wires values to your real data flow, and validates against the rendered HTML. |
 
 Every skill is a self-contained folder with a `SKILL.md` and its own README — portable to Claude Code and any agent runtime that supports the Agent Skills format. More on the way; detailed pages live at [mavenslab.tech/skills](https://mavenslab.tech/skills).
 

@@ -19,6 +19,20 @@
       "keywords": ["privacy-policy", "terms-of-use", "cookie-consent", "gdpr", "ccpa", "compliance", "legal-pages", "launch"],
       "category": "compliance",
       "strict": false
+    },
+    {
+      "name": "json-ld",
+      "source": "./",
+      "skills": ["./json-ld"],
+      "description": "Implement, fix, and deepen schema.org structured data as JSON-LD. Discovers every entity worth marking up by scanning data models and routes, verifies every type and property against the live schema.org release and Google rich-results docs (never model memory), wires each value to the page's real data flow, and validates against the rendered HTML.",
+      "version": "1.0.0",
+      "author": { "name": "Mavens Tech Lab" },
+      "homepage": "https://mavenslab.tech/skills/json-ld",
+      "repository": "https://github.com/Mavens-Tech-Lab/skills",
+      "license": "MIT",
+      "keywords": ["json-ld", "structured-data", "schema-org", "rich-results", "seo", "geo", "knowledge-graph", "microdata", "rich-snippets"],
+      "category": "seo",
+      "strict": false
     }
   ]
 }
