@@ -30,7 +30,7 @@ Read `references/entity-discovery.md` and follow it to produce `jsonld-scan.md` 
 - **Routes and templates**: which entity renders on which URL pattern; detail vs listing vs static pages; SSR/SSG/CSR mode (JSON-LD must land in server-rendered HTML wherever possible).
 - **Existing structured data**: `application/ld+json` blocks, microdata, RDFa, SEO libraries and plugins already emitting markup, OG/meta tags as data hints. On WordPress and Shopify the dominant emitters (SEO plugins, storefront apps, the theme itself) live outside the repo — there the rendered-HTML audit is mandatory.
 
-The scan ends with an **entity inventory table**: entity → data source → pages → candidate schema.org type(s) → existing markup status → proposed action (`add` / `fix` / `deepen` / `convert` / `skip` + reason). Ambiguous type choices are marked for intake, not silently decided.
+The scan ends with an **entity inventory table**: entity → data source → pages → candidate schema.org type(s) → existing markup status → proposed action (`add` / `fix` / `deepen` / `convert` / `skip` + reason). Ambiguous type choices are marked for intake, not silently decided. Two anti-false-positive rules govern every candidate row (details in the reference): a type is grounded in what the page actually renders — a filename, slug, route segment, or nav label is a reason to open the file, never evidence by itself — and a type with hard-required properties (Event's `startDate`, Recipe's ingredients, Product's offer…) is only a candidate when a real source for them exists; otherwise it's a skip row stating that reason.
 
 ## Phase 2 — Fetch fresh definitions (before intake, so questions are informed)
 

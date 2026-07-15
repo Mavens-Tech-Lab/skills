@@ -13,7 +13,7 @@ Discovers every entity worth marking up · verifies against *live* schema.org + 
 
 <br />
 
-[![Skill page](https://img.shields.io/badge/skill_page-mavenslab.tech-121619?style=for-the-badge&logo=googlechrome&logoColor=FCFF56)](https://mavenslab.tech/skills/json-ld) [![Tested on](https://img.shields.io/badge/tested_on-Claude_Code-121619?style=for-the-badge&logo=claude&logoColor=FCFF56)](https://code.claude.com/docs/en/skills) [![Version](https://img.shields.io/badge/version-1.1.0-FCFF56?style=for-the-badge&labelColor=121619)](../.claude-plugin/marketplace.json) [![License](https://img.shields.io/badge/license-MIT-FCFF56?style=for-the-badge&labelColor=121619)](../LICENSE)
+[![Skill page](https://img.shields.io/badge/skill_page-mavenslab.tech-121619?style=for-the-badge&logo=googlechrome&logoColor=FCFF56)](https://mavenslab.tech/skills/json-ld) [![Tested on](https://img.shields.io/badge/tested_on-Claude_Code-121619?style=for-the-badge&logo=claude&logoColor=FCFF56)](https://code.claude.com/docs/en/skills) [![Version](https://img.shields.io/badge/version-1.1.1-FCFF56?style=for-the-badge&labelColor=121619)](../.claude-plugin/marketplace.json) [![License](https://img.shields.io/badge/license-MIT-FCFF56?style=for-the-badge&labelColor=121619)](../LICENSE)
 
 </div>
 

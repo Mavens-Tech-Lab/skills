@@ -56,7 +56,18 @@ Classify each finding: `valid & complete` / `valid but shallow` (bare name+type,
 
 ## 5. Candidate type mapping
 
-Map each entity to schema.org candidate type(s). Common mappings to check against (verify every choice against the live definition in Phase 2 — this table is a starting point, not an authority):
+Map each entity to schema.org candidate type(s), under two rules that exist to kill false positives:
+
+**Ground every candidate type in content, never in a name.** A filename, template suffix, handle, slug, route segment, collection name, or nav label (`article.event-flowers`, `page.reviews`, `recipes/`, `/events/`) is a *hint to open the file* — never, by itself, evidence the type applies. Read what the page actually renders and which fields feed it before you write a type into the inventory.
+
+**Gate any type that has hard-required properties on a real source existing for them.** Phase 2 confirms the exact required list; check for the source now, during the scan:
+
+- `Event` → a real `startDate` (+ a place or `virtualLocation`). An evergreen page *about* events, or a marketing article that merely contains the word "event", is not an Event.
+- `Recipe` → ingredients + instructions · `JobPosting` → a hiring org + a dated, current opening · `Product` → an offer/price source · `VideoObject` → a video `contentUrl` · `Review`/`aggregateRating` → verifiable reviews visible on the page.
+
+If the required source is absent, the entity is a **skip row stating that reason** — not a candidate "worth considering." Never invent an entity, a date, or any required value to justify a type: a site with no dated events gets no Event markup, even if a page is named "events".
+
+Common mappings to check against (verify every choice against the live definition in Phase 2 — this table is a starting point, not an authority):
 
 - Products/plans/pricing → `Product` + `Offer` (or `Service`; software → `SoftwareApplication`/`WebApplication`) — ambiguity is an intake question
 - Blog/news/docs → `BlogPosting` / `NewsArticle` / `Article` / `TechArticle`
@@ -67,7 +78,6 @@ Map each entity to schema.org candidate type(s). Common mappings to check agains
 - Site itself → `WebSite` (+ `SearchAction` only if internal search exists); every page → `WebPage` subtype; nav trails → `BreadcrumbList`
 - FAQs, HowTos → mark as **policy-check candidates**: eligibility for rich results has changed over time; Phase 2 decides from the live Google docs, not from habit
 
-Do NOT invent an entity to justify a type. A site with no events gets no Event markup.
 
 ## 6. Output: `jsonld-scan.md`
 
