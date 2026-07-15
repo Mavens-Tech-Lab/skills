@@ -7,7 +7,7 @@
 
 # Agent Skills
 
-**Open-source [Agent Skills](https://code.claude.com/docs/en/skills) that read your codebase before they write a single line.**
+**Open-source [Agent Skills](https://code.claude.com/docs/en/skills) by [Mavens Tech Lab](https://mavenslab.tech) — published as a Claude Code plugin marketplace, installable in any agent via [skills.sh](https://skills.sh).**
 
 <br />
 
