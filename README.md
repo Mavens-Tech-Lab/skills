@@ -41,6 +41,8 @@ Every skill is a self-contained folder with a `SKILL.md` and its own README — 
 /plugin install <skill-name>@mavens-skills
 ```
 
+> **"Plugin not found"?** Your copy of the marketplace is out of date — `/plugin marketplace add` doesn't re-fetch one you already added, so skills released since then are invisible to it. Run `/plugin marketplace update mavens-skills`, then install again.
+
 **Any other agent** — Cursor, Codex, GitHub Copilot, Windsurf, and [dozens more](https://github.com/vercel-labs/skills#supported-agents), via [skills.sh](https://skills.sh):
 
 ```
