@@ -1,6 +1,7 @@
 # Internal Claude context — do not publish (public repo)
 CLAUDE.local.md
 .claude/
+.mcp.json
 
 # macOS
 .DS_Store
@@ -12,3 +13,4 @@ CLAUDE.local.md
 .history/
 
 socials/
+sandbox/

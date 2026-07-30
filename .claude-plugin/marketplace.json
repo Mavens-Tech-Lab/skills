@@ -9,29 +9,92 @@
     {
       "name": "compliance-pages",
       "source": "./",
-      "skills": ["./compliance-pages"],
+      "skills": [
+        "./compliance-pages"
+      ],
       "description": "Generate the legal/compliance pages every website needs — Privacy Policy, Terms of Use, Support, Contact — plus a compliant cookie consent banner, and conditionally an accessibility statement and refund/shipping policies. Grounded in an actual scan of the codebase and right-sized to what the site really does.",
       "version": "1.0.0",
-      "author": { "name": "Mavens Tech Lab" },
+      "author": {
+        "name": "Mavens Tech Lab"
+      },
       "homepage": "https://mavenslab.tech/skills/compliance-pages",
       "repository": "https://github.com/Mavens-Tech-Lab/skills",
       "license": "MIT",
-      "keywords": ["privacy-policy", "terms-of-use", "cookie-consent", "gdpr", "ccpa", "compliance", "legal-pages", "launch"],
+      "keywords": [
+        "privacy-policy",
+        "terms-of-use",
+        "cookie-consent",
+        "gdpr",
+        "ccpa",
+        "compliance",
+        "legal-pages",
+        "launch"
+      ],
       "category": "compliance",
       "strict": false
     },
     {
       "name": "json-ld",
       "source": "./",
-      "skills": ["./json-ld"],
+      "skills": [
+        "./json-ld"
+      ],
       "description": "Implement, fix, and deepen schema.org structured data as JSON-LD — including WordPress (Yoast/Rank Math/WooCommerce-aware) and Shopify Liquid themes. Discovers every entity worth marking up by scanning data models and routes, verifies every type and property against the live schema.org release and Google rich-results docs (never model memory), wires each value to the page's real data flow, and validates against the rendered HTML.",
       "version": "1.1.2",
-      "author": { "name": "Mavens Tech Lab" },
+      "author": {
+        "name": "Mavens Tech Lab"
+      },
       "homepage": "https://mavenslab.tech/skills/json-ld",
       "repository": "https://github.com/Mavens-Tech-Lab/skills",
       "license": "MIT",
-      "keywords": ["json-ld", "structured-data", "schema-org", "rich-results", "seo", "geo", "knowledge-graph", "microdata", "rich-snippets", "wordpress", "woocommerce", "shopify", "liquid"],
+      "keywords": [
+        "json-ld",
+        "structured-data",
+        "schema-org",
+        "rich-results",
+        "seo",
+        "geo",
+        "knowledge-graph",
+        "microdata",
+        "rich-snippets",
+        "wordpress",
+        "woocommerce",
+        "shopify",
+        "liquid"
+      ],
       "category": "seo",
+      "strict": false
+    },
+    {
+      "name": "shopify-upgrade",
+      "source": "./",
+      "skills": [
+        "./shopify-upgrade"
+      ],
+      "description": "Upgrade a codebase to a newer Shopify API version — any language and every surface (Admin GraphQL/REST, Storefront, Customer Account, Functions, App Bridge, extensions, webhooks, Liquid themes, Hydrogen). Finds every version the repo pins plus dated platform deprecations that carry no version at all, checks each call site against the target version's schema and the live shopify.dev changelog instead of model memory, presents a risk-tiered plan for approval, then migrates each surface with a specialist agent and flips the version string last.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mavens Tech Lab"
+      },
+      "homepage": "https://mavenslab.tech/skills/shopify-upgrade",
+      "repository": "https://github.com/Mavens-Tech-Lab/skills",
+      "license": "MIT",
+      "keywords": [
+        "shopify",
+        "api-version",
+        "upgrade",
+        "migration",
+        "graphql",
+        "admin-api",
+        "storefront-api",
+        "shopify-functions",
+        "app-bridge",
+        "liquid",
+        "hydrogen",
+        "deprecation",
+        "breaking-changes"
+      ],
+      "category": "migration",
       "strict": false
     }
   ]
